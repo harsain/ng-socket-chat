@@ -1,0 +1,27 @@
+<html ng-app="chatApp">
+
+    <head lang="en">
+        <title>Chat App</title>
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <script src="socket.io/socket.io.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="MainCtrl">
+        <div class="container">
+            <h1>Angular - Socket.IO Example</h1>
+            <h3>Let's Chat</h3>
+
+            <ul>
+                <li ng-repeat="msg in msgs track by $index">
+                    {{msg}}
+                </li>
+            </ul>
+
+            <form ng-submit="sendMsg()">
+                <input type="text" ng-model="chat.msg"/>
+            </form>
+        </div>
+    </body>
+</html>
